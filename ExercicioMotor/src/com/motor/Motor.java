@@ -14,13 +14,17 @@ public class Motor {
     }
 
     public void ligar(){
-        this.ligado = true;
-        this.rpm = 1000;
+        if (this.ligado = false){
+            this.ligado = true;
+            this.rpm = 1000;
+        }
     }
 
     public void desligar(){
-        this.ligado = false;
-        this.rpm = 0;
+        if (this.ligado){
+            this.ligado = false;
+            this.rpm = 0;
+        }
     }
 
     public int getRpm(){
@@ -30,8 +34,7 @@ public class Motor {
     public void calcularRpm(int aceleracao) {
         if (ligado = true) {
             if (rpm <= 0) {
-                this.rpm = 0;
-                this.ligado = false;
+                desligar();
             } else {
                 int novoRpm = rpm + (aceleracao * 1000);
                 if (novoRpm > 8000){
